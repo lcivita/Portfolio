@@ -12,7 +12,8 @@ main > section {
 
 
 nav {
-    width: 260px; /* Increased width */
+    width: 260px; /* Fixed width for the navigation menu */
+    min-width: 260px; /* Minimum width to prevent resizing */
     background-color: #000000; /* Same as body background */
     height: 100vh;
     padding: 20px;
