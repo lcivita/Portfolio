@@ -1,0 +1,107 @@
+body {
+    font-family: 'Courier Prime', monospace;
+    background-color: #000000; /* Pitch black background */
+    color: white; /* White text */
+    margin: 0;
+    display: flex;
+}
+
+main > section {
+    display: none; /* Hide all sections initially */
+}
+
+
+nav {
+    width: 260px; /* Increased width */
+    background-color: #000000; /* Same as body background */
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+nav h1 {
+    margin-top: 0;
+    font-size: 1.3em; /* Increased font size */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.15em; /* Font size for main categories */
+}
+
+nav ul ul {
+    padding-left: 20px; /* Indentation for subcategories */
+    font-size: 1em; /* Smaller font size for subcategories */
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 0.25rem;
+    position: relative;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 5px 0;
+}
+
+/* Define the initial box-shadow color for each link */
+nav a.hover-bg-orange {
+    box-shadow: inset 0 0 0 0 orange;
+}
+
+nav a.hover-bg-red {
+    box-shadow: inset 0 0 0 0 orangered;
+}
+
+nav a.hover-bg-pink {
+    box-shadow: inset 0 0 0 0 hotpink;
+}
+
+nav a.hover-bg-yellow {
+    box-shadow: inset 0 0 0 0 yellow;
+}
+
+/* Hover states */
+nav a.hover-bg-orange:hover {
+    box-shadow: inset 400px 0 0 0 orange;
+    color: black;
+}
+
+nav a.hover-bg-red:hover {
+    box-shadow: inset 400px 0 0 0 orangered;
+    color: black;
+}
+
+nav a.hover-bg-pink:hover {
+    box-shadow: inset 400px 0 0 0 hotpink;
+    color: black;
+}
+
+nav a.hover-bg-yellow:hover {
+    box-shadow: inset 400px 0 0 0 yellow;
+    color: black;
+}
+
+.game-gifs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.game-gifs img {
+    width: 32%; /* Adjust the width to fit three images side by side */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.game-description {
+    color: white; /* Adjust text color as needed */
+    font-size: 1em; /* Adjust font size as needed */
+    margin-bottom: 20px; /* Spacing after the text */
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}

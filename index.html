@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Jeha Civita - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <h1><a href="#" class="header-link">Luca Jeha Civita</a></h1>
+    <ul>
+        <li><a href="#games" class="hover-bg-yellow">Games</a>
+            <ul>
+                <li><a href="#sum" class="hover-bg-orange">SUM</a></li>
+                <li><a href="#goo-goo-grapplers" class="hover-bg-red">Goo Goo Grapplers</a></li>
+                <li><a href="#ragball" class="hover-bg-pink">Ragball</a></li>
+                <li><a href="#animuh" class="hover-bg-yellow">AniMUH</a></li>
+                <li><a href="#too-short" class="hover-bg-orange">2short</a></li>
+            </ul>
+        </li>
+        <li><a href="#shader-programming" class="hover-bg-red">Shader Programming</a></li>
+        <li><a href="#art" class="hover-bg-pink">Art</a></li>
+        <li><a href="#about" class="hover-bg-yellow">About / Contact</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="games">
+        <section id="sum">
+            <div class="game-gifs">
+                <img src="Gifs/SUMgif1.gif" alt="GIF 1" draggable="false">
+                <img src="Gifs/SUMgif2.gif" alt="GIF 2" draggable="false">
+                <img src="Gifs/SUMgif3.gif" alt="GIF 3" draggable="false">
+            </div>
+            <p class="game-description">Placeholder text for SUM.</p>
+        </section>
+        <section id="goo-goo-grapplers">
+            <div class="game-gifs">
+                <img src="Gifs/GGGgif1.gif" alt="GIF 1" draggable="false">
+                <img src="Gifs/GGGgif2.gif" alt="GIF 2">
+                <img src="Gifs/GGGgif3.gif" alt="GIF 3" draggable="false">
+            </div>
+            <p class="game-description">Placeholder text for Goo Goo Grapplers.</p>
+        </section>
+        <section id="ragball">
+            <div class="game-gifs">
+                <img src="Gifs/RAGgif1.gif" alt="GIF 1" draggable="false">
+                <img src="Gifs/RAGgif2.gif" alt="GIF 2" draggable="false">
+                <img src="Gifs/RAGgif3.gif" alt="GIF 3" draggable="false">
+            </div>
+            <p class="game-description">Placeholder text for Ragball.</p>
+        </section>
+        <section id="animuh">
+            <div class="game-gifs">
+                <img src="Gifs/ANIgif1.gif" alt="GIF 1" draggable="false">
+                <img src="Gifs/ANIgif2.gif" alt="GIF 2" draggable="false">
+                <img src="Gifs/ANIgif3.gif" alt="GIF 3" draggable="false">
+            </div>
+            <p class="game-description">Placeholder text for AniMUH.</p>
+        </section>
+        <section id="too-short">
+            <div class="game-gifs">
+                <img src="Gifs/TOOgif1.gif" alt="GIF 1" draggable="false">
+                <img src="Gifs/TOOgif2.gif" alt="GIF 2" draggable="false">
+                <img src="Gifs/TOOgif3.gif" alt="GIF 3" draggable="false">
+            </div>
+            <p class="game-description">Placeholder text for 2Short.</p>
+        </section>
+        <!-- Repeat similar structure for other subcategories -->
+    </section>
+    <section id="shader-programming">
+        <!-- Content for shader programming -->
+    </section>
+    <section id="art">
+        <!-- Content for art -->
+    </section>
+    <section id="about">
+        <!-- Content for about/contact -->
+    </section>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        function hideAllSections() {
+            // Select all sections within <main>, including nested ones
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => section.style.display = 'none');
+        }
+
+        hideAllSections();
+
+        function showSection(event) {
+            event.preventDefault();
+            const sectionId = event.target.getAttribute('href');
+
+            hideAllSections();
+            const sectionToShow = document.querySelector(sectionId);
+            if (sectionToShow) {
+                sectionToShow.style.display = 'block'; // Show the targeted section
+
+                // If the parent section is 'games', show it as well
+                if (sectionToShow.parentElement.id === 'games') {
+                    sectionToShow.parentElement.style.display = 'block';
+                }
+            }
+        }
+
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href').startsWith('#')) {
+                link.addEventListener('click', showSection);
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>
