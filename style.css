@@ -4,12 +4,17 @@ body {
     color: white; /* White text */
     margin: 0;
     display: flex;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    transition: margin 0.3s ease-in-out; /* Add smooth transition for margin */
+}
+
+body.menu-open {
+    margin-left: 260px; /* Adjust the margin to match the width of the navigation menu */
 }
 
 main > section {
     display: none; /* Hide all sections initially */
 }
-
 
 nav {
     width: 260px; /* Fixed width for the navigation menu */
@@ -18,6 +23,8 @@ nav {
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
+    position: fixed; /* Make the menu fixed position */
+    z-index: 1; /* Ensure the menu is above content */
 }
 
 nav h1 {

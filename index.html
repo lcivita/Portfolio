@@ -6,10 +6,73 @@
     <title>Luca Jeha Civita - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for the menu button */
+        .menu-btn {
+            position: fixed;
+            top: 20px; /* Adjust the position as needed */
+            left: 20px; /* Adjust the position as needed */
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Styles for the side menu */
+        .side-menu {
+            position: fixed;
+            left: -260px; /* Initially hidden to the left */
+            top: 0;
+            width: 260px;
+            height: 100%;
+            background-color: #000000;
+            transition: 0.4s;
+        }
+
+        /* Add styles for links within the side menu as needed */
+        .side-menu a {
+            color: white;
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        /* Show the menu when the button is clicked */
+        .menu-open .side-menu {
+            left: 0;
+        }
+
+        /* Rotate the bars to form an "X" when the menu is open */
+        .menu-open .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-open .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    </style>
 </head>
 <body>
-<nav>
-    <h1><a href="#" class="header-link">Luca Jeha Civita</a></h1>
+<!-- Hamburger menu button -->
+<div id="menu-btn" class="menu-btn">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<!-- Navigation menu -->
+<nav id="side-menu" class="side-menu">
     <ul>
         <li><a href="#games" class="hover-bg-yellow">Games</a>
             <ul>
@@ -82,6 +145,19 @@
 </main>
 
 <script>
+    // Script for the collapsible menu button
+    document.addEventListener("DOMContentLoaded", function() {
+        const menuBtn = document.getElementById("menu-btn");
+        const sideMenu = document.getElementById("side-menu");
+
+        menuBtn.addEventListener("click", function() {
+            document.body.classList.toggle("menu-open");
+        });
+    });
+</script>
+
+<script>
+    // Script for showing/hiding sections when navigation links are clicked
     document.addEventListener("DOMContentLoaded", function() {
         function hideAllSections() {
             // Select all sections within <main>, including nested ones
@@ -115,7 +191,5 @@
         });
     });
 </script>
-
-
 </body>
 </html>
