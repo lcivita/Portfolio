@@ -162,7 +162,7 @@
         <br>
         <br>
         <br>
-        <div id="shader-sketch"></div>
+        <iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/dtGcDh?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
         <!-- Content for shader programming -->
     </section>
     <section id="art">
@@ -234,44 +234,6 @@
             }
         });
     });
-
-    let p5Instance; // Store the p5.js instance
-
-    // Function to initialize the p5.js sketch
-    function initializeP5Sketch() {
-        p5Instance = new p5(function(p) {
-
-            let myShader;
-
-            p.preload = function() {
-                myShader = loadShader('ShaderFiles/shader.vert', 'ShaderFiles/fire.frag');
-            }
-
-            p.setup = function() {
-                createCanvas(400, 400,WEBGL);
-                pixelDensity(1);
-            }
-
-            p.draw = function(){
-
-                shader(myShader);
-
-                myShader.setUniform('u_resolution', [width,height]);
-                myShader.setUniform('u_time', millis());
-
-                //myShader is used to draw this rect
-                rect(0,0,width,height);
-            }
-        });
-    }
-
-    // Function to remove the p5.js sketch
-    function removeP5Sketch() {
-        if (p5Instance) {
-            p5Instance.remove();
-        }
-    }
 </script>
-<!--<script src="sketch.js"></script> &lt;!&ndash; Replace 'sketch.js' with the path to your sketch file &ndash;&gt;-->
 </body>
 </html>
