@@ -7,63 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-<!--    <script type="module" src="sketch.js"></script>-->
-    <style>
-        /* Styles for the menu button */
-        .menu-btn {
-            position: fixed;
-            top: 20px; /* Adjust the position as needed */
-            left: 20px; /* Adjust the position as needed */
-            cursor: pointer;
-            z-index: 2;
-        }
-
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-            transition: 0.4s;
-        }
-
-        /* Styles for the side menu */
-        .side-menu {
-            position: fixed;
-            left: -260px; /* Initially hidden to the left */
-            top: 0;
-            width: 260px;
-            height: 100%;
-            background-color: #000000;
-            transition: 0.4s;
-        }
-
-        /* Add styles for links within the side menu as needed */
-        .side-menu a {
-            color: white;
-            display: block;
-            padding: 15px;
-            text-decoration: none;
-            font-size: 1.15em;
-        }
-
-        /* Show the menu when the button is clicked */
-        .menu-open .side-menu {
-            left: 0;
-        }
-
-        /* Rotate the bars to form an "X" when the menu is open */
-        .menu-open .bar:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .menu-open .bar:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-open .bar:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-    </style>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    
 </head>
 <body>
 <div class="menu-container">
@@ -94,7 +39,8 @@
         </li>
         <li><a href="#shader-programming" class="hover-bg-red">Shader Programming</a></li>
         <li><a href="#art" class="hover-bg-pink">Art</a></li>
-        <li><a href="#about" class="hover-bg-yellow">About / Contact</a></li>
+        <li><a href="#about" class="hover-bg-yellow">Skills / About</a></li>
+        <li><a href="#contact" class="hover-bg-orange">Contact</a></li>
     </ul>
 </nav>
 
@@ -174,6 +120,15 @@
     <section id="about">
         <br>
         <br>
+        <p> tes sadlkhaslj ndlskajklas jklsdasjkljkasfhaljflkasjf bnjkadfk basklf sdbkl;jafbsildhkf bdaisfbasdhbflhjabiflasdilhfhb dhljkafjkt</p>
+        <br>
+        <div id="chart-container"></div>
+        <br>
+        
+    </section>
+    <section id="contact">
+        <br>
+        <br>
         <br>
         <!-- Content for about/contact -->
     </section>
@@ -190,6 +145,7 @@
         });
     });
 </script>
+
 
 <script>
     // Script for showing/hiding sections when navigation links are clicked
@@ -216,15 +172,6 @@
                     sectionToShow.parentElement.style.display = 'block';
                 }
             }
-
-            // Check if the clicked link is the "Shader Programming" link
-            if (sectionId === "#shader-programming") {
-                // Initialize the p5.js sketch when the "Shader Programming" page is opened
-                initializeP5Sketch();
-            } else {
-                // Remove the p5.js sketch when other pages are opened
-                removeP5Sketch();
-            }
         }
 
         const navLinks = document.querySelectorAll('nav a');
@@ -235,5 +182,8 @@
         });
     });
 </script>
+
+<script src = "JSScripts/chart.js"></script>
+
 </body>
 </html>

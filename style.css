@@ -135,8 +135,102 @@ nav a.hover-bg-yellow:hover {
     /*cursor: pointer; !* Add cursor style *!*/
 }
 
+#skills-table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.bar-cell {
+    position: relative;
+    height: 20px; /* Adjust the height of the bars */
+}
+
+.bar {
+    height: 100%;
+    background-color: #3498db; /* Bar color */
+    width: 0; /* Initial width, will be animated */
+    transition: width 1s ease-in-out; /* Animation duration and easing */
+}
+
+/* Styles for the menu button */
+.menu-btn {
+    position: fixed;
+    top: 20px; /* Adjust the position as needed */
+    left: 20px; /* Adjust the position as needed */
+    cursor: pointer;
+    z-index: 2;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Styles for the side menu */
+.side-menu {
+    position: fixed;
+    left: -260px; /* Initially hidden to the left */
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background-color: #000000;
+    transition: 0.4s;
+}
+
+/* Add styles for links within the side menu as needed */
+.side-menu a {
+    color: white;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 1.15em;
+}
+
+/* Show the menu when the button is clicked */
+.menu-open .side-menu {
+    left: 0;
+}
+
+/* Rotate the bars to form an "X" when the menu is open */
+.menu-open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#chart-container {
+    float: left; /* Add this line to float the chart to the left */
+    width: 50%; /* Adjust the width as needed */
+    margin-right: 20px; /* Add some margin between the chart and text */
+    position: relative; /* Add this line to reset the position */
+    left: 0; /* Reset the left position */
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Centers text horizontally */
+}
+
+#about p {
+    clear: both; /* Add this line to clear both sides of the floated chart */
+}
+
 main {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
 }
+
+
