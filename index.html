@@ -6,6 +6,8 @@
     <title>Luca Jeha Civita - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<!--    <script type="module" src="sketch.js"></script>-->
     <style>
         /* Styles for the menu button */
         .menu-btn {
@@ -64,11 +66,16 @@
     </style>
 </head>
 <body>
-<!-- Hamburger menu button -->
-<div id="menu-btn" class="menu-btn">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
+<div class="menu-container">
+    <!-- Hamburger menu button -->
+    <div id="menu-btn" class="menu-btn">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- PNG icon -->
+    <img src="Icons/siteIcon.png" alt="Icon" class="icon" draggable="false">
 </div>
 
 <!-- Navigation menu -->
@@ -103,6 +110,7 @@
                 <img src="Gifs/SUMgif3.gif" alt="GIF 3" draggable="false">
             </div>
             <p class="game-description">Placeholder text for SUM.</p>
+            <iframe frameborder="0" src="https://itch.io/embed/2055604?border_width=2&amp;bg_color=000000&amp;fg_color=ffffff&amp;border_color=ec00ee" width="554" height="169"><a href="https://lcivita99.itch.io/sum">SUM by Plastic Bag Hand Man</a></iframe>
         </section>
         <section id="goo-goo-grapplers">
             <br>
@@ -154,6 +162,7 @@
         <br>
         <br>
         <br>
+        <div id="shader-sketch"></div>
         <!-- Content for shader programming -->
     </section>
     <section id="art">
@@ -207,6 +216,15 @@
                     sectionToShow.parentElement.style.display = 'block';
                 }
             }
+
+            // Check if the clicked link is the "Shader Programming" link
+            if (sectionId === "#shader-programming") {
+                // Initialize the p5.js sketch when the "Shader Programming" page is opened
+                initializeP5Sketch();
+            } else {
+                // Remove the p5.js sketch when other pages are opened
+                removeP5Sketch();
+            }
         }
 
         const navLinks = document.querySelectorAll('nav a');
@@ -216,6 +234,44 @@
             }
         });
     });
+
+    let p5Instance; // Store the p5.js instance
+
+    // Function to initialize the p5.js sketch
+    function initializeP5Sketch() {
+        p5Instance = new p5(function(p) {
+
+            let myShader;
+
+            p.preload = function() {
+                myShader = loadShader('ShaderFiles/shader.vert', 'ShaderFiles/fire.frag');
+            }
+
+            p.setup = function() {
+                createCanvas(400, 400,WEBGL);
+                pixelDensity(1);
+            }
+
+            p.draw = function(){
+
+                shader(myShader);
+
+                myShader.setUniform('u_resolution', [width,height]);
+                myShader.setUniform('u_time', millis());
+
+                //myShader is used to draw this rect
+                rect(0,0,width,height);
+            }
+        });
+    }
+
+    // Function to remove the p5.js sketch
+    function removeP5Sketch() {
+        if (p5Instance) {
+            p5Instance.remove();
+        }
+    }
 </script>
+<!--<script src="sketch.js"></script> &lt;!&ndash; Replace 'sketch.js' with the path to your sketch file &ndash;&gt;-->
 </body>
 </html>
