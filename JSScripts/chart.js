@@ -1,4 +1,4 @@
-let chartCreated = false;
+xlet chartCreated = false;
 let chart;
 let width = window.innerWidth - 260;
 let height = 300;

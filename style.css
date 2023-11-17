@@ -208,21 +208,6 @@ nav a.hover-bg-yellow:hover {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-#chart-container {
-    float: left; /* Add this line to float the chart to the left */
-    width: 50%; /* Adjust the width as needed */
-    margin-right: 20px; /* Add some margin between the chart and text */
-    position: relative; /* Add this line to reset the position */
-    left: 0; /* Reset the left position */
-}
-
-#about {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers content horizontally */
-    text-align: center; /* Centers text horizontally */
-}
-
 #about p {
     clear: both; /* Add this line to clear both sides of the floated chart */
 }
