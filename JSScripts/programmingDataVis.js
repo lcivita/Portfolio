@@ -7,6 +7,7 @@ var customData = [
     { Skill: "C++", Value: 3 },
     { Skill: "JavaScript", Value: 2 },
     { Skill: "HTML", Value: 2 },
+    { Skill: "CSS", Value: 2 },
 
 ];
 
