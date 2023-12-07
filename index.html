@@ -4,196 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Jeha Civita - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
-    
 </head>
 <body>
-<div class="menu-container">
-    <!-- Hamburger menu button -->
-    <div id="menu-btn" class="menu-btn">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
 
-    <!-- PNG icon -->
-    <img src="Icons/siteIcon.png" alt="Icon" class="icon" draggable="false">
+<div class="black-background"></div>
+
+<!-- Fixed Menu -->
+<div class="nav-menu"> <!-- Wrap the entire navigation menu -->
+    <a href="index.html">
+        <div class="menu-header">
+            <img src="Icons/siteIcon.png">
+        </div>
+    </a>
+    <div class="menu-description">
+        <p> hey! i'm luca.</p>
+        <br>
+        <p> games designer / developer </p>
+        <br>
+        <p> shader programmer</p>
+        <br>
+        <p> technical artist</p>
+    </div>
 </div>
 
-<!-- Navigation menu -->
-<nav id="side-menu" class="side-menu">
-    <br>
-    <br>
-    <ul>
-        <li><a href="#games" class="hover-bg-yellow">Games</a>
-            <ul>
-                <li><a href="#sum" class="hover-bg-orange">SUM</a></li>
-                <li><a href="#goo-goo-grapplers" class="hover-bg-red">Goo Goo Grapplers</a></li>
-                <li><a href="#ragball" class="hover-bg-pink">Ragball</a></li>
-                <li><a href="#animuh" class="hover-bg-yellow">AniMUH</a></li>
-                <li><a href="#too-short" class="hover-bg-orange">2short</a></li>
-            </ul>
-        </li>
-        <li><a href="#shader-programming" class="hover-bg-red">Shader Programming</a></li>
-        <li><a href="#art" class="hover-bg-pink">Art</a></li>
-        <li><a href="#skills" class="hover-bg-yellow">Skills</a></li>
-        <li><a href="#contact" class="hover-bg-orange">About / Contact</a></li>
-    </ul>
-</nav>
 
+<!-- Main Content (Home Page) -->
 <main>
-    <section id="games">
-        <section id="sum">
-            <br>
-            <br>
-            <br>
-            <div class="game-gifs">
-                <img src="Gifs/SUMgif1.gif" alt="GIF 1" draggable="false">
-                <img src="Gifs/SUMgif2.gif" alt="GIF 2" draggable="false">
-                <img src="Gifs/SUMgif3.gif" alt="GIF 3" draggable="false">
-            </div>
-            <p class="game-description">Placeholder text for SUM.</p>
-            <iframe frameborder="0" src="https://itch.io/embed/2055604?border_width=2&amp;bg_color=000000&amp;fg_color=ffffff&amp;border_color=ec00ee" width="554" height="169"><a href="https://lcivita99.itch.io/sum">SUM by Plastic Bag Hand Man</a></iframe>
-        </section>
-        <section id="goo-goo-grapplers">
-            <br>
-            <br>
-            <br>
-            <div class="game-gifs">
-                <img src="Gifs/GGGgif1.gif" alt="GIF 1" draggable="false">
-                <img src="Gifs/GGGgif2.gif" alt="GIF 2" draggable="false">
-                <img src="Gifs/GGGgif3.gif" alt="GIF 3" draggable="false">
-            </div>
-            <p class="game-description">Placeholder text for Goo Goo Grapplers.</p>
-        </section>
-        <section id="ragball">
-            <br>
-            <br>
-            <br>
-            <div class="game-gifs">
-                <img src="Gifs/RAGgif1.gif" alt="GIF 1" draggable="false">
-                <img src="Gifs/RAGgif2.gif" alt="GIF 2" draggable="false">
-                <img src="Gifs/RAGgif3.gif" alt="GIF 3" draggable="false">
-            </div>
-            <p class="game-description">Placeholder text for Ragball.</p>
-        </section>
-        <section id="animuh">
-            <br>
-            <br>
-            <br>
-            <div class="game-gifs">
-                <img src="Gifs/ANIgif1.gif" alt="GIF 1" draggable="false">
-                <img src="Gifs/ANIgif2.gif" alt="GIF 2" draggable="false">
-                <img src="Gifs/ANIgif3.gif" alt="GIF 3" draggable="false">
-            </div>
-            <p class="game-description">Placeholder text for AniMUH.</p>
-        </section>
-        <section id="too-short">
-            <br>
-            <br>
-            <br>
-            <div class="game-gifs">
-                <img src="Gifs/TOOgif1.gif" alt="GIF 1" draggable="false">
-                <img src="Gifs/TOOgif2.gif" alt="GIF 2" draggable="false">
-                <img src="Gifs/TOOgif3.gif" alt="GIF 3" draggable="false">
-            </div>
-            <p class="game-description">Placeholder text for 2Short.</p>
-        </section>
-        <!-- Repeat similar structure for other subcategories -->
-    </section>
-    <section id="shader-programming">
-        <br>
-        <br>
-        <br>
-        <video width="400" height="400" controls>
-            <source src="Vids/shadersVid1.mp4" type="video/mp4">
-            <!--            <source src="movie.ogg" type="video/ogg">-->
-            Your browser does not support the video tag.
-        </video>
-        <br>
-        <iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/dtGcDh?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
-        <!-- Content for shader programming -->
-    </section>
-    <section id="art">
-        <br>
-        <br>
-        <br>
-        <!-- Content for art -->
-    </section>
-    <section id="skills">
-        <br>
-        <br>
-        <br>
-        <div id="programming_dataviz"></div>
-        <div id="software_dataviz"></div>
-        
-    </section>
-    <section id="contact">
-        <br>
-        <br>
-        <br>
-        <!-- Content for about/contact -->
-    </section>
+    <h1>Welcome to My Portfolio</h1>
+
+    <!-- Project Grid -->
+    <div class="project-grid-container">
+        <!-- Project 1 -->
+        <div class="project">
+            <a href="project1.html">
+                <img src="Gifs/GGGgif1.gif" alt="Project 1">
+                <h2>Project 1 Title</h2>
+            </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <a href="project2.html">
+                <img src="Gifs/GGGgif2.gif" alt="Project 2">
+                <h2>Project 2 Title</h2>
+            </a>
+        </div>
+
+        <div class="project">
+            <a href="project1.html">
+                <img src="Gifs/GGGgif1.gif" alt="Project 1">
+                <h2>Project 1 Title</h2>
+            </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <a href="project2.html">
+                <img src="Gifs/GGGgif2.gif" alt="Project 2">
+                <h2>Project 2 Title</h2>
+            </a>
+        </div>
+
+        <div class="project">
+            <a href="project1.html">
+                <img src="Gifs/GGGgif1.gif" alt="Project 1">
+                <h2>Project 1 Title</h2>
+            </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <a href="project2.html">
+                <img src="Gifs/GGGgif2.gif" alt="Project 2">
+                <h2>Project 2 Title</h2>
+            </a>
+        </div>
+
+        <div class="project">
+            <a href="project1.html">
+                <img src="Gifs/GGGgif1.gif" alt="Project 1">
+                <h2>Project 1 Title</h2>
+            </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <a href="project2.html">
+                <img src="Gifs/GGGgif2.gif" alt="Project 2">
+                <h2>Project 2 Title</h2>
+            </a>
+        </div>
+
+        <!-- Add more projects here -->
+    </div>
 </main>
-
-<script>
-    // Script for the collapsible menu button
-    document.addEventListener("DOMContentLoaded", function() {
-        const menuBtn = document.getElementById("menu-btn");
-        const sideMenu = document.getElementById("side-menu");
-
-        menuBtn.addEventListener("click", function() {
-            document.body.classList.toggle("menu-open");
-        });
-    });
-</script>
-
-
-<script>
-    // Script for showing/hiding sections when navigation links are clicked
-    document.addEventListener("DOMContentLoaded", function() {
-        function hideAllSections() {
-            // Select all sections within <main>, including nested ones
-            const sections = document.querySelectorAll('main section');
-            sections.forEach(section => section.style.display = 'none');
-        }
-
-        hideAllSections();
-
-        function showSection(event) {
-            event.preventDefault();
-            const sectionId = event.target.getAttribute('href');
-
-            hideAllSections();
-            const sectionToShow = document.querySelector(sectionId);
-            if (sectionToShow) {
-                sectionToShow.style.display = 'block'; // Show the targeted section
-
-                // If the parent section is 'games', show it as well
-                if (sectionToShow.parentElement.id === 'games') {
-                    sectionToShow.parentElement.style.display = 'block';
-                }
-            }
-        }
-
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            if (link.getAttribute('href').startsWith('#')) {
-                link.addEventListener('click', showSection);
-            }
-        });
-    });
-</script>
-
-<script src = "JSScripts/programmingDataVis.js"></script>
-
-<script src = "JSScripts/softwareDataVis.js"></script>
-
-<!--<script src = "JSScripts/chart.js"></script>-->
 
 </body>
 </html>
