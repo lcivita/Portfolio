@@ -1,7 +1,7 @@
 /* Styles for the navigation menu on the left */
 /* Styles for the navigation menu on the left */
 nav {
-    width: 20%; /* Adjust the width as needed */
+    width: 200px; /* Adjust the width as needed */
     background-color: blueviolet; /* Set the initial background color to transparent */
     color: white; /* Text color */
     padding: 20px; /* Add padding for spacing */
@@ -13,7 +13,7 @@ nav {
 
 /* Normal styles for wider screens */
 .nav-menu {
-    width: 20%; /* Adjust the width as needed */
+    width: 200px; /* Adjust the width as needed */
     background-color: transparent; /* Set the initial background color to transparent */
     color: white; /* Text color */
     padding: 20px; /* Add padding for spacing */
@@ -42,7 +42,7 @@ nav {
 }
 
 /* Media query for narrower screens (adjust the breakpoint as needed) */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     /* Hide the content of the menu */
     .menu-description {
         display: none;
@@ -67,14 +67,29 @@ nav {
     }
 }
 
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+ul li a:hover {
+    text-decoration: none;
+}
+
+
 /* Styles for the main content on the right */
 main {
-    margin-left: 25%; /* Match the width of the navigation */
+    margin-left: 230px; /* Match the width of the navigation */
     padding: 50px; /* Add padding for spacing */
     background-color: lightpink;
     margin-top: 0; /* Add margin to the top to create space for navigation */
     font-family: "Courier", monospace; /* Use Courier font */
-    
 }
 
 .project-grid-container {
@@ -84,7 +99,7 @@ main {
 }
 
 .project {
-    width: calc(25% - 20px); /* Adjust the percentage as needed */
+    width: calc(33.33% - 20px); /* Adjust the percentage as needed */
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -101,15 +116,19 @@ main {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .project {
         width: calc(50% - 20px);
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .project {
         width: 100%;
+        
+    }
+    main {
+        margin-left: 68px;
     }
 }
 
