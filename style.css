@@ -87,9 +87,13 @@ ul li a:hover {
 main {
     margin-left: 230px; /* Match the width of the navigation */
     padding: 50px; /* Add padding for spacing */
-    background-color: lightpink;
+    background-color: deeppink;
     margin-top: 0; /* Add margin to the top to create space for navigation */
     font-family: "Courier", monospace; /* Use Courier font */
+}
+
+.section-head {
+    text-align: center;
 }
 
 .project-grid-container {
@@ -104,10 +108,15 @@ main {
     box-sizing: border-box;
 }
 
+.project h3 {
+    text-align: center;
+}
+
 .project img {
     max-width: 100%; /* Set the maximum width to 100% of the grid cell */
     height: auto; /* Allow the height to adjust proportionally */
 }
+
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
@@ -193,3 +202,25 @@ a:hover {
     color: white; /* Text color changes to white on hover */
 }
 
+.image-container {
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+}
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    text-align: center;
+}
+
+.text-box p {
+    margin: 10px 0;
+}
