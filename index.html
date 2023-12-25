@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Jeha Civita - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="webgl.js" type="module"></script>
 </head>
 <body>
 
 <div class="black-background"></div>
+<div class="black-background-2"></div>
 
 <!-- Fixed Menu -->
 <div class="nav-menu">
@@ -20,17 +22,31 @@
     <div class="menu-description">
         <p> hey! i'm luca.</p>
         <br>
-        <p> games designer / developer </p>
-        <br>
+        <p> video game designer </p>
+        <p> creative developer </p>
         <p> shader programmer</p>
         <br>
-        <p> technical artist</p>
+        <p> i studied philosophy & design at NYU for undergrad, and am currently finishing up my design & technology M.F.A at parsons!</p>
     </div>
 </div>
 
 
-<!-- Main Content (Home Page) -->
 <main>
+    <!-- bg frag shader-->
+    <p id="fragmentShader" hidden>
+        vec2 pos;
+        uniform float time;
+        uniform vec2 resolution;
+        uniform vec2 mouse;
+
+        void main(void) {
+        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
+<!--        pos -= vec2(mouse.x, -mouse.y);-->
+        float d = sqrt(pos.x*pos.x + pos.y*pos.y)*10.0;
+        gl_FragColor = vec4(1.0+cos(time*0.97+d), 1.0+cos(time*0.59+d), 1.0+cos(-0.83*time+d), 2.0)/2.0;
+        }
+    </p>
+    
     <h2>Luca Jeha Civita <3 Portfolio</h2>
     
     <ul>
@@ -52,6 +68,7 @@
             <a href="sum.html">
                 <img src="Gifs/sum.gif" alt="SUM" draggable="false">
                 <h3>SUM</h3>
+                
             </a>
         </div>
 

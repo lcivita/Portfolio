@@ -4,24 +4,26 @@ nav {
     width: 200px; /* Adjust the width as needed */
     background-color: blueviolet; /* Set the initial background color to transparent */
     color: white; /* Text color */
-    padding: 20px; /* Add padding for spacing */
+    padding: 0; /* Add padding for spacing */
     position: fixed; /* Keep the menu fixed on the left */
     top: 0; /* Align it to the top */
     bottom: 0; /* Stretch it to the bottom */
     font-family: "Courier", monospace; /* Use Courier font */
+    font-size: 10px;
 }
 
 /* Normal styles for wider screens */
 .nav-menu {
-    width: 200px; /* Adjust the width as needed */
+    width: 220px; /* Adjust the width as needed */
     background-color: transparent; /* Set the initial background color to transparent */
     color: white; /* Text color */
-    padding: 20px; /* Add padding for spacing */
+    padding: 10px; /* Add padding for spacing */
     position: fixed; /* Keep the menu fixed on the left */
     top: 0; /* Align it to the top */
     bottom: 0; /* Stretch it to the bottom */
     font-family: "Courier", monospace; /* Use Courier font */
     overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+    font-size: 14px;
 }
 
 .menu-header {
@@ -37,7 +39,8 @@ nav {
 }
 
 .menu-description {
-    background-color: black; /* Background color for the text area */
+    background-color: transparent; /* Background color for the text area */
+    
     padding: 5px 20px;
 }
 
@@ -63,7 +66,7 @@ nav {
 
     /* Reduce the width of the nav menu */
     .nav-menu {
-        width: 5%; /* Set it to 1/3 of the current size */
+        width: 5%;
     }
 }
 
@@ -76,20 +79,46 @@ ul {
 ul li {
     display: inline;
     margin-right: 20px;
+    line-height: 2.5;
+    
+}
+
+ul li a {
+    padding: 5px;
 }
 
 ul li a:hover {
     text-decoration: none;
+    
 }
-
 
 /* Styles for the main content on the right */
 main {
     margin-left: 230px; /* Match the width of the navigation */
     padding: 50px; /* Add padding for spacing */
-    background-color: deeppink;
+    /*background-color: brown;*/
+    background-color: transparent;
     margin-top: 0; /* Add margin to the top to create space for navigation */
     font-family: "Courier", monospace; /* Use Courier font */
+    margin-right: 150px;
+}
+
+.black-highlight:hover {
+    /* Add a white box around each text element */
+    background: white;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+@media (max-width: 800px) {
+    main {
+        margin-right: 3px;
+    }
 }
 
 .section-head {
@@ -102,6 +131,12 @@ main {
     justify-content: space-between;
 }
 
+main h2 {
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
 .project {
     width: calc(33.33% - 20px); /* Adjust the percentage as needed */
     margin-bottom: 20px;
@@ -110,6 +145,9 @@ main {
 
 .project h3 {
     text-align: center;
+    background: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .project img {
@@ -145,10 +183,28 @@ main {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 240px;
     height: 100%;
     background-color: black;
     z-index: -1; /* Place it behind everything */
+}
+.black-background-2 {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 100%;
+    background-color: black;
+    z-index: -1; /* Place it behind everything */
+}
+
+@media (max-width: 800px) {
+    .black-background {
+        width: 70px;
+    }
+    .black-background-2 {
+        width: 0;
+    }
 }
 
 /* Styles for the row of GIFs */
@@ -191,16 +247,18 @@ main {
 
 /* Default link styles */
 a {
-    text-decoration: none; /* Remove underline */
-    color: black; /* Initial text color */
-    position: relative; /* Position for the link */
+    text-decoration: none;
+    color: white;
+    position: relative;
+    background: black;
 }
 
 
 /* Hover effect for links */
 a:hover {
-    color: white; /* Text color changes to white on hover */
+    color: deeppink; /* Text color changes to white on hover */
 }
+
 
 .image-container {
     position: relative;
