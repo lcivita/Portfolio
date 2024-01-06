@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Jeha Civita - Wiggy Wiggy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="webgl.js" type="module"></script>
+</head>
+<body>
+
+<div class="black-background"></div>
+<div class="black-background-2"></div>
+
+<!-- Fixed Menu -->
+<div class="nav-menu">
+    <a href="index.html" class="menu-toggle">
+        <div class="menu-header">
+            <img src="Icons/siteIcon.png" alt="Site Icon">
+        </div>
+    </a>
+    <div class="menu-description">
+        <p> hey! i'm luca.</p>
+        <br>
+        <p> video game designer </p>
+        <p> creative developer </p>
+        <p> shader programmer</p>
+        <br>
+        <p> i studied philosophy & design at NYU for undergrad, and am currently finishing up my design & technology M.F.A at parsons!</p>
+    </div>
+</div>
+
+<!-- Main Content (Home Page) -->
+<main>
+    <!-- bg frag shader-->
+    <p id="fragmentShader" hidden>
+        vec2 pos;
+        uniform float time;
+        uniform vec2 resolution;
+
+        void main(void) {
+        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
+        vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0.,2.,4.));
+        gl_FragColor = vec4(col,1.0);
+        }
+    </p>
+
+    <a href="index.html"><- back</a>
+
+    <h1>Wiggy Wiggy</h1>
+
+    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/900437193?h=b59bf2cc3e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Wiggy Wiggy Trailer"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+
+    <br>
+    <p>
+        Wiggy Wiggy was a game made for an controller class. our group of three worked on a hairdressing rhythm game
+        that put the player in the shoes of a hairdresser in a chaotic wig factory where wigs must be cut and dyed in
+        rhythm to music!
+    </p>
+    <br>
+    <p>
+        This project was an incredible exercise in physical computing and C# / Unity programming. I was particularly
+        put in charge of the Unity development of the project, where I created a set of custom unity editor tools to
+        facilitate our processes. It was quite interesting to create a custom input window to scriptable object pipeline
+        that allowed us to edit songs and keep them in rhythm easily. Below is a screenshot of the tool I created for
+        us to use:
+    </p>
+    
+    <img src="imgs/wiggyWiggyEditor.png" width="30%" class="center-image">
+    
+    <p>
+        Wiggy Wiggy has unfortunately not yet gotten past its initial prototyping phase. It was playable, and the few
+        people who did play it claimed to have a tremendous amount of fun; however, our child will have to be placed
+        on pause for the moment!
+    </p>
+</main>
+
+</body>
+</html>
