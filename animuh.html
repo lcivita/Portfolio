@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Jeha Civita - aniMUH</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="webgl.js" type="module"></script>
+</head>
+<body>
+
+<div class="black-background"></div>
+<div class="black-background-2"></div>
+
+<!-- Fixed Menu -->
+<div class="nav-menu">
+    <a href="index.html" class="menu-toggle">
+        <div class="menu-header">
+            <img src="Icons/siteIcon.png" alt="Site Icon">
+        </div>
+    </a>
+    <div class="menu-description">
+        <p> hey! i'm luca.</p>
+        <br>
+        <p> video game designer </p>
+        <p> creative developer </p>
+        <p> shader programmer</p>
+        <br>
+        <p> i studied philosophy & design at NYU for undergrad, and am currently finishing up my design & technology M.F.A at parsons!</p>
+    </div>
+</div>
+
+
+<!-- Main Content (Home Page) -->
+<main>
+
+    <!-- bg frag shader-->
+    <p id="fragmentShader" hidden>
+        vec2 pos;
+        uniform float time;
+        uniform vec2 resolution;
+
+        void main(void) {
+        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
+        vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0.,2.,4.));
+        gl_FragColor = vec4(col,1.0);
+        }
+    </p>
+
+    <a href="index.html"><- back</a>
+
+    <h1>Ragball</h1>
+    
+    <div class="gif-row">
+        <div class="gif">
+            <img src="Gifs/ANIgif1.gif" alt="GIF 1">
+        </div>
+        
+        <div class="gif">
+            <img src="Gifs/ANIgif2.gif" alt="GIF 2">
+        </div>
+        
+        <div class="gif">
+            <img src="Gifs/ANIgif3.gif" alt="GIF 3">
+        </div>
+    </div>
+
+
+    <br>
+    <p>
+        aniMUH blah blah blah
+    </p>
+    <br>
+    <p>
+        Process
+    </p>
+    <p>
+        blah blab
+    </p>
+    <p>
+        blah
+    </p>
+</main>
+
+</body>
+</html>
