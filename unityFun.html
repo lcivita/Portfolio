@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Jeha Civita - Unity Fun</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="webgl.js" type="module"></script>
+</head>
+<body>
+
+<div class="black-background"></div>
+<div class="black-background-2"></div>
+
+<!-- Fixed Menu -->
+<div class="nav-menu">
+    <a href="index.html" class="menu-toggle">
+        <div class="menu-header">
+            <img src="Icons/siteIcon.png" alt="Site Icon">
+        </div>
+    </a>
+    <div class="menu-description">
+        <p> hey! i'm luca.</p>
+        <br>
+        <p> video game designer </p>
+        <p> creative developer </p>
+        <p> shader programmer</p>
+        <br>
+        <p> i studied philosophy & design at NYU for undergrad, and am currently finishing up my design & technology M.F.A at parsons!</p>
+    </div>
+</div>
+
+<main>
+    <p id="fragmentShader" hidden>
+        vec2 pos;
+        uniform float time;
+        uniform vec2 resolution;
+
+        void main(void) {
+        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
+        vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0.,2.,4.));
+        gl_FragColor = vec4(col,1.0);
+        }
+    </p>
+
+    <a href="index.html"><- back</a>
+
+    <h1>Breaking Unity</h1>
+
+    <br>
+    <p>
+        What I most love about learning graphics programming is that elements of game development that seem entirely
+        extraterrestrial slowly start becoming accessible and manipulatable. I've started a new practice where I try
+        to customize and break tools given to me by game engines. This can result in one of two outcomes: I either create
+        something incredibly useful, or a heaping pile of garbage (which I might love even more!)
+    </p>
+    <br>
+    <p>
+        Since this is a page where I am supposed to demonstrate my utility, I will focus on a recent project of mine.
+    </p>
+    
+    <p>
+        I cannot stand the Unity terrain editor. There are so many issues with it, and I found myself wanting certain
+        features that I could not find online. So I made them! I combined my knowledge of the engine and shader programming
+        to add a few much-needed features to it. Below I list these additions!
+    </p>
+
+    <br>
+    <p>
+        Custom lighting
+    </p>
+    <p>
+        blah blah
+    </p>
+    <br>
+    
+    <p>
+        Multiple materials per terrain
+    </p>
+    <p>
+        blah blah
+    </p>
+    <br>
+
+    <p>
+        Splat map accessibility
+    </p>
+    <p>
+        blah blah
+    </p>
+    <br>
+    <p>
+        FUTURE PLANS
+    </p>
+    <p>
+        [here mention the terrain height map editing]
+    </p>
+    
+</main>
+
+</body>
+</html>
