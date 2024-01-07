@@ -149,12 +149,6 @@ main p {
     box-sizing: border-box;
 }
 
-.project h3 {
-    text-align: center;
-    background: black;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
 h3 {
     text-align: center;
     background: black;
@@ -162,6 +156,22 @@ h3 {
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+a h3:hover {
+    color: deeppink;
+}
+
+.project h3 {
+    text-align: center;
+    background: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.project a:hover {
+    background: deeppink;
+}
+
 
 .project img {
     max-width: 100%; /* Set the maximum width to 100% of the grid cell */
@@ -268,9 +278,8 @@ a {
 }
 
 
-/* Hover effect for links */
 a:hover {
-    color: deeppink; /* Text color changes to white on hover */
+    color: deeppink; 
 }
 
 
@@ -308,5 +317,12 @@ a:hover {
     .center-image {
         width: 100%;
     }
+}
+
+h1 {
+    color: white;
+    position: relative;
+    background: black;
+    padding: 10px;
 }
 

@@ -41,24 +41,37 @@
         void main(void) {
         vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
         vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0.,2.,4.));
-        gl_FragColor = vec4(col,1.0);
+        col *= 1. - (pos.y + 1.25);
+        gl_FragColor = vec4(col * (1. - pos.y),1.0);
         }
     </p>
 
-    <a href="index.html"><- back</a>
+    <a href="index.html" style="padding: 10px"><- back</a>
 
     <h1>HLSL</h1>
 
+    <br>
+    
+    <p>Below are a few of the times I used shader coding in an HLSL environment!</p>
+    
     <br>
     <h3 class="section-head">3D Cartoon Smear</h3>
     <p>
         blah blah
     </p>
-    <img src="Gifs/GGGgif2.gif" class="center-image" alt="vertex smear">
+    <img src="Gifs/smear.gif" class="center-image" alt="vertex smear">
     <br>
+
+    <h3 class="section-head">Custom Lighting & Emulation</h3>
     <p>
         blah blah
     </p>
+    <img src="Gifs/capybara.gif" class="center-image" alt="vertex smear">
+    <br>
+    <p>
+        lens flare blah blah
+    </p>
+    <img src="Gifs/flare.gif" class="center-image" alt="vertex smear">
 </main>
 
 </body>
