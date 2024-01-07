@@ -42,43 +42,61 @@
         void main(void) {
         vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
         vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0.,2.,4.));
-        gl_FragColor = vec4(col,1.0);
+        col *= 1. - (pos.y + 1.25);
+        gl_FragColor = vec4(col * (1. - pos.y),1.0);
         }
     </p>
     
     <a href="index.html"><- back</a>
-    <h1>Goo Goo Grapplers</h1>
-    
-
-    <!-- Row of GIFs -->
-    <div class="gif-row">
-        <!-- GIF 1 -->
-        <div class="gif">
-            <img src="Gifs/GGGgif1.gif" alt="GIF 1">
-        </div>
-
-        <!-- GIF 2 -->
-        <div class="gif">
-            <img src="Gifs/GGGgif2.gif" alt="GIF 2">
-        </div>
-
-        <!-- GIF 3 -->
-        <div class="gif">
-            <img src="Gifs/GGGgif3.gif" alt="GIF 3">
+    <div class="image-container">
+        <img src="imgs/gggMap.png" alt="gggMap" class="project-image">
+        <div class="text-box">
+            <p>Goo Goo Grapplers</p>
         </div>
     </div>
 
     <br>
+    
+    <h3 class="section-head">Summary</h3>
+    <p>
+        Goo Goo Grapplers is an ongoing project of mine. GGG is a MOBA, a fighting game, and a tower defense experience
+        mashed into a tiny arena. If I had to give this a Steam description, it would be as follows (subject to much improvement):
+        'Babies dish it out to obliterate their opponents cradles. Summon cribmates from the shop to aid you in your
+        battles as you dominate the battlefield!'
+    </p>
+    <p>coming 2024</p>
+    <br>
+    
+    <h3 class="section-head">Procedural Sprite Animation</h3>
+    <p>
+        As seen on the first GIF above, this project served as great practice in procedural animation, particularly in
+        a 2D environment. Inspired by the Rain World developer team, I set out to create dynamic and 'bendy' pixel sprites
+        that would react to player input and character movement. All character animations (with the exception of particle
+        effects) are being created procedurally.
+    </p>
+    <img src="Gifs/GGGgif1.gif" class="center-image" alt="proc anim">
+    <br>
+    
+    <h3 class="section-head">Finite State Machines</h3>
+    <p>
+        Given the nature of a fighting games, I found this project to be an opportunity to explore the full potential of
+        finite state machines in game development. By charting out character states and transition conditions, a
+        system was created that allowed for smooth programming and organization. Below a simplified version for visible
+        accessibility:
+    </p>
+    
+    <img src="imgs/gggStateMachine.png" class="center-image" alt="state machine chart">
+    <br>
 
-    <div class="image-container">
-        <img src="imgs/gggMap.png" alt="gggMap" class="project-image">
-        <div class="text-box">
-            <p>GGG intro explanation</p>
-            <p>Process</p>
-            <p>blah blah</p>
-            <p>blah blah</p>
-        </div>
-    </div>
+    <h3 class="section-head">Combat</h3>
+    <p>
+        GGG was also an incredible exercise in combat feel and physics! Hitstun, endlag, delay, stickyness, bounce, and impact
+        were all deeply explored to make a fighting system that felt rewarding, despite its minimalism.
+    </p>
+    <img src="Gifs/GGGgif2.gif" class="center-image" alt="combat ggg">
+    <br>
+
+    
 </main>
 </body>
 </html>
