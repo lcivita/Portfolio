@@ -48,18 +48,35 @@
     <a href="index.html" style="padding: 10px"><- back</a>
 
     <h1>GLSL</h1>
-
-    <br>
+    
     <p>
         GLSL was my starting point in shader programming. My initial experience was short, but extremely informative. With
         the parallel processing GPU principles I acquired from these studies, I was able to implement shaders into my
         game development pipeline.
     </p>
-    <br>
     <p>
         In order to showcase my GLSL programming, I have decided to make all of the backgrounds in my portfolio be
         entirely composed of shaders I wrote for WEBGL. I am not entirely sure how far I will have gotten at the point
         of your viewing, but hopefully enough pages will be filled with eye-candy to satisfy your every need!
+    </p>
+    <br>
+    <p>
+        For fun, I'll have whatever shader is in the background of this page have its code displayed below:
+    </p>
+    
+    <p>
+        vec2 pos; <br>
+        uniform float time;<br>
+        uniform vec2 resolution;<br>
+        <br>
+        void main(void)<br>
+        {<br>
+        <br>
+        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);<br>
+        vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0.,2.,4.));<br>
+        gl_FragColor = vec4(col,1.0);<br>
+        <br>
+        }
     </p>
 </main>
 
