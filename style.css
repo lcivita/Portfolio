@@ -1,72 +1,78 @@
-/* Styles for the navigation menu on the left */
-/* Styles for the navigation menu on the left */
 nav {
-    width: 200px; /* Adjust the width as needed */
-    background-color: blueviolet; /* Set the initial background color to transparent */
-    color: white; /* Text color */
-    padding: 0; /* Add padding for spacing */
-    position: fixed; /* Keep the menu fixed on the left */
-    top: 0; /* Align it to the top */
-    bottom: 0; /* Stretch it to the bottom */
-    font-family: "Courier", monospace; /* Use Courier font */
+    width: 200px;
+    background-color: blueviolet;
+    color: white;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    font-family: "Courier", monospace;
     font-size: 10px;
 }
 
-/* Normal styles for wider screens */
 .nav-menu {
-    width: 220px; /* Adjust the width as needed */
-    background-color: transparent; /* Set the initial background color to transparent */
-    color: white; /* Text color */
-    padding: 10px; /* Add padding for spacing */
-    position: fixed; /* Keep the menu fixed on the left */
-    top: 0; /* Align it to the top */
-    bottom: 0; /* Stretch it to the bottom */
-    font-family: "Courier", monospace; /* Use Courier font */
-    overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+    width: 220px;
+    background-color: transparent; 
+    color: white;
+    padding: 10px;
+    position: fixed; 
+    top: 0; 
+    bottom: 0;
+    font-family: "Courier", monospace;
+    overflow-y: auto;
     font-size: 14px;
 }
 
 .menu-header {
-    display: flex; /* Use flexbox to align the icon and text vertically */
-    align-items: center; /* Center the items vertically */
+    display: flex;
+    align-items: center;
 }
 
 .menu-header img {
-    max-width: 100%; /* Ensure the image fits within its container */
-    height: auto; /* Allow the height to adjust proportionally */
-    margin-right: 10px; /* Add some spacing between the icon and text */
+    max-width: 100%;
+    height: auto;
+    margin-right: 10px;
     padding-bottom: 20px;
 }
 
 .menu-description {
-    background-color: transparent; /* Background color for the text area */
+    background-color: transparent;
     
     padding: 5px 20px;
 }
 
-/* Media query for narrower screens (adjust the breakpoint as needed) */
 @media (max-width: 800px) {
-    /* Hide the content of the menu */
+    
     .menu-description {
         display: none;
+        background: transparent;
     }
 
-    /* Style the small version of the site icon */
+    
     .menu-toggle {
         position: absolute;
         top: 10px;
         left: 10px;
+        background: transparent;
     }
 
     /* Make the site icon smaller */
     .menu-toggle img {
-        max-width: 40px; /* Adjust the maximum width as needed */
-        height: auto; /* Allow the height to adjust proportionally */
+        max-width: 40px;
+        height: auto;
+        background: transparent;
+        margin-left: -10px;
     }
-
-    /* Reduce the width of the nav menu */
+    
     .nav-menu {
         width: 5%;
+        background: transparent;
+    }
+    .black-background {
+        background: transparent;
+    }
+    .black-background-2 {
+        background: transparent;
     }
 }
 
@@ -92,19 +98,16 @@ ul li a:hover {
     
 }
 
-/* Styles for the main content on the right */
 main {
-    margin-left: 230px; /* Match the width of the navigation */
-    padding: 50px; /* Add padding for spacing */
-    /*background-color: brown;*/
+    margin-left: 230px;
+    padding: 50px;
     background-color: transparent;
-    margin-top: 0; /* Add margin to the top to create space for navigation */
-    font-family: "Courier", monospace; /* Use Courier font */
+    margin-top: 0;
+    font-family: "Courier", monospace;
     margin-right: 150px;
 }
 
 .black-highlight:hover {
-    /* Add a white box around each text element */
     background: white;
 }
 
@@ -131,6 +134,7 @@ canvas {
     justify-content: space-between;
 }
 
+
 main h2 {
     background: black;
     color: white;
@@ -144,7 +148,7 @@ main p {
 }
 
 .project {
-    width: calc(33.33% - 20px); /* Adjust the percentage as needed */
+    width: calc(33.33% - 20px);
     margin-bottom: 20px;
     box-sizing: border-box;
 }
@@ -174,8 +178,8 @@ a h3:hover {
 
 
 .project img {
-    max-width: 100%; /* Set the maximum width to 100% of the grid cell */
-    height: auto; /* Allow the height to adjust proportionally */
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -198,7 +202,7 @@ a h3:hover {
         
     }
     main {
-        margin-left: 68px;
+        margin-left: 0px;
     }
     
 }
@@ -210,7 +214,7 @@ a h3:hover {
     width: 240px;
     height: 100%;
     background-color: black;
-    z-index: -1; /* Place it behind everything */
+    z-index: -1;
 }
 .black-background-2 {
     position: fixed;
@@ -219,19 +223,18 @@ a h3:hover {
     width: 160px;
     height: 100%;
     background-color: black;
-    z-index: -1; /* Place it behind everything */
+    z-index: -1;
 }
 
 @media (max-width: 800px) {
     .black-background {
-        width: 70px;
+        width: 0;
     }
     .black-background-2 {
         width: 0;
     }
 }
 
-/* Styles for the row of GIFs */
 .gif-row {
     display: flex;
     justify-content: space-between;
@@ -269,7 +272,6 @@ a h3:hover {
     height: auto;
 }
 
-/* Default link styles */
 a {
     text-decoration: none;
     color: white;
@@ -324,5 +326,9 @@ h1 {
     position: relative;
     background: black;
     padding: 10px;
+}
+
+.coming-soon:hover {
+    color: deeppink;
 }
 

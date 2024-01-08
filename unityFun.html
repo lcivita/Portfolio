@@ -46,8 +46,7 @@
     <a href="index.html" style="padding: 10px"><- back</a>
 
     <h1>Breaking Unity</h1>
-
-    <br>
+    
     <p>
         What I most love about learning graphics programming is that elements of game development that seem entirely
         extraterrestrial slowly start becoming accessible and manipulatable. I've started a new practice where I try
@@ -60,40 +59,62 @@
     </p>
     
     <p>
-        I cannot stand the Unity terrain editor. There are so many issues with it, and I found myself wanting certain
-        features that I could not find online. So I made them! I combined my knowledge of the engine and shader programming
-        to add a few much-needed features to it. Below I list these additions!
+        The Unity terrain editor is, for lack of a kinder word, lackluster.
+        In working with it, I found myself wishing I had access to so many features that seemed impossible
+        to reach!
+        So... I made them! Well, some of them.
+        I combined my knowledge of the engine and shader programming
+        to add a few much-needed features. Below I list these additions!
     </p>
 
     <br>
-    <p>
+    <h3>
         Custom lighting
-    </p>
+    </h3>
     <p>
-        blah blah
+        The terrain material that is used by default in unity does not allow for any shader programming.
+        The first step I took was adding custom lighting functionality to it. Below is what happened.
+        It might look like a mess, but I can assure you, it was a wonderful sight to behold since it
+        meant I had successfully implemented the custom lighting/shading model! What is seen is the surface's
+        albedo being altered based on a hash function that processes the terrain's normal.
     </p>
+    <img src="Gifs/customTerrainLight.gif" class="center-image" alt="custom light GIF">
+    <br><br>
+
+    <h3>
+        Splat map accessibility
+    </h3>
+    <p>
+        I noticed however, that with the new shading model, I had lost complete access to the terrain
+        painting features typically available in the Unity terrain editor. I knew however, that the splat
+        maps still existed within the terrain data. Upon research and some shadergraph programming, I found
+        that I could pass in the splat map as a texture to my shader and process it manually. Below are the
+        first modifications I made in order to visualize all channels of said splat map.
+    </p>
+    <img src="Gifs/splatMap.gif" class="center-image" alt="splat GIF">
+    <br><br>
+    
+    <h3>
+        Multiple materials per terrain
+    </h3>
+    <p>
+        It was a matter of processing the above mentioned texture in order to allow for multiple materials
+        to exist within the same terrain. Well, not quite that, but by programming stepped shaders for each
+        channel of the splat map, it was essentially that. Here we see the manipulatable terrain in action,
+        albeit most definitely not the most polished of examples. The functionality remains!
+    </p>
+    <img src="Gifs/customTerrain.gif" class="center-image" alt="splat GIF">
+    <br>
     <br>
     
-    <p>
-        Multiple materials per terrain
-    </p>
-    <p>
-        blah blah
-    </p>
-    <br>
-
-    <p>
-        Splat map accessibility
-    </p>
-    <p>
-        blah blah
-    </p>
-    <br>
-    <p>
+    <h3>
         FUTURE PLANS
-    </p>
+    </h3>
     <p>
-        [here mention the terrain height map editing]
+        One feature I have not gotten around to customizing is the sculpting of the terrain itself. Currently,
+        the only alternatives are to either use the in-Unity editor, or to edit the RAW file of the height map itself.
+        Neither of these seem too appetizing to me, so I intend on working on an alternative solution in the
+        near future.
     </p>
     
 </main>
