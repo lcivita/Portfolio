@@ -34,18 +34,25 @@
         }
         
         void main(void) {
-        vec2 pos = gl_FragCoord.xy / resolution.xy;
+<!--        vec2 pos = gl_FragCoord.xy / resolution.xy;-->
+        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
+        pos += vec2(1.,1.);
+        
         vec2 displacement = vec2(sin(time), cos(time));
+        
 
         float AR = resolution.x / resolution.y;
-        pos.x *= AR;
+<!--        pos.x *= AR;-->
 <!--        pos.x -= (AR - 1.) / 2.;-->
 <!--        pos += vec2(0.5, 0.);-->
         vec2 mousePos = vec2(mouse.x, 1. - mouse.y);
         mousePos *= AR;
         mousePos -= (AR - 1.) / 2.;
         vec2 viewDir = mousePos;
-
+        
+<!--        vec3 color = vec3(pos.x+1., pos.y+1., 0.5);-->
+<!--        gl_FragColor = vec4(color.rgb, 1.);-->
+        
         float circleSDF = sdCircle(pos - vec2(0.5), 0.5);
         float circleMask = smoothstep(0., 0.001, circleSDF);
         
@@ -107,7 +114,8 @@
         meant I had successfully implemented the custom lighting/shading model! What is seen is the surface's
         albedo being altered based on a hash function that processes the terrain's normal.
     </p>
-    <img src="Gifs/customTerrainLight.gif" class="center-image" alt="custom light GIF">
+    <br>
+    <img src="Gifs/customTerrainLight.gif" class="center-image" alt="custom light GIF" style="border: 2px solid white;">
     <br><br>
 
     <h3>

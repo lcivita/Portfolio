@@ -69,11 +69,20 @@
 
         void main(void)
         {
+<!--        vec2 pos = gl_FragCoord.xy / resolution.xy;-->
+<!--&lt;!&ndash;        gl_FragColor = vec4(1., 0., 0., 1.);&ndash;&gt;-->
+<!--        -->
+<!--        float AR = resolution.x / resolution.y;-->
+<!--        -->
+<!--        pos = gl_FragCoord.xy - resolution.xy * 0.25;-->
+<!--        pos /= resolution.y;-->
+<!--        pos *= 1.5;-->
+
         vec2 pos = gl_FragCoord.xy / resolution.xy;
-<!--        gl_FragColor = vec4(1., 0., 0., 1.);-->
-        
+        <!--        gl_FragColor = vec4(1., 0., 0., 1.);-->
+
         float AR = resolution.x / resolution.y;
-        
+
         pos = gl_FragCoord.xy - resolution.xy * 0.25;
         pos /= resolution.y;
         pos *= 1.5;
@@ -255,7 +264,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var imagePaths = ['Icons/siteIcon1.png', 'Icons/siteIcon2.png', 'Icons/siteIcon3.png', 'Icons/siteIcon4.png'];
+        var imagePaths = ['Icons/siteIcon1.png', 'Icons/siteIcon2.png', 'Icons/siteIcon3.png', 'Icons/siteIcon4.png', 'Icons/siteIcon5.png'];
         var currentImage = 0;
         var dynamicImageElement = document.getElementById('dynamicImage');
         function changeImage() {
