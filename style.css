@@ -88,13 +88,13 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100vw - 16px); /* Keep it at 100vw or use calc() to subtract scrollbar width if necessary */
+    width: calc(100vw - 16px);
     height: 60px;
-    padding: 0 15px; /* Consider if reducing this padding helps */
+    padding: 0 15px;
     background-color: #000;
     border-bottom: 2px solid #fff;
     z-index: 1000;
-    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    box-sizing: border-box;
 }
 
 .info-button {
@@ -149,6 +149,7 @@ body {
     top: 15vh; /* Offset the top position by the same amount to align with the new container height */
     width: 60vw;
     height: auto;
+    max-height: calc(100vh - 70px - 14vh) ;
 }
 
 .overlay-content {
