@@ -167,7 +167,7 @@ body {
 }
 
 .overlay-image {
-    width: 100px;
+    height: 100px;
     margin: 0 ;
 }
 
@@ -298,6 +298,7 @@ a h3:hover {
     background: black;
     padding-top: 5px;
     padding-bottom: 5px;
+    border: 2px solid white;
     
 }
 
@@ -459,12 +460,12 @@ h1 {
     position: relative;
     background: black;
     padding: 10px;
+    border: 2px solid white;
 }
 
 .coming-soon:hover {
     color: deeppink;
 }
-
 
 ::-webkit-scrollbar {
     width: 16px;
