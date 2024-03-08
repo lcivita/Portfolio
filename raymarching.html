@@ -30,9 +30,16 @@
     uniform vec2 resolution;
 
     void main(void) {
-    vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
-    float d = sqrt(pos.x*pos.x + pos.y*pos.y)*10.0;
-    gl_FragColor = vec4(1.0+cos(time*0.97+d), 1.0+cos(time*0.59+d), 1.0+cos(-0.83*time+d), 2.0)/2.0;
+    float gridSize = 10.0;
+    pos = floor((gl_FragCoord.xy * 2.0 - resolution) / min(resolution.x, resolution.y) * gridSize) / gridSize;
+    float d = length(pos) * 10.0;
+    float ripple = sin(d - time * 2.0) / d;
+    
+    float red = 0.5 + 0.5 * sin(time * 0.5 + ripple + pos.x * 2.0);
+    float green = 0.5 + 0.5 * sin(time * 0.7 + ripple + pos.y * 2.0);
+    float blue = 0.5 + 0.5 * sin(time * 0.9 + ripple);
+
+    gl_FragColor = vec4(red, green, blue, 1.0);
     }
   </p>
 
