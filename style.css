@@ -374,6 +374,7 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    border: solid white 2px;
 }
 
 @media (max-width: 800px) {
@@ -391,8 +392,13 @@ h1 {
     font-family: 'Courier New';
 }
 
+.coming-soon h3 {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .coming-soon:hover {
     color: deeppink;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
 }
 
 ::-webkit-scrollbar {
