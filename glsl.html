@@ -40,31 +40,17 @@
 
         void main(void)
         {
-        <!--        vec2 pos = gl_FragCoord.xy / resolution.xy;-->
-        <!--&lt;!&ndash;        gl_FragColor = vec4(1., 0., 0., 1.);&ndash;&gt;-->
-        <!--        -->
-        <!--        float AR = resolution.x / resolution.y;-->
-        <!--        -->
-        <!--        pos = gl_FragCoord.xy - resolution.xy * 0.25;-->
-        <!--        pos /= resolution.y;-->
-        <!--        pos *= 1.5;-->
 
         vec2 pos = gl_FragCoord.xy / resolution.xy;
-        <!--        gl_FragColor = vec4(1., 0., 0., 1.);-->
-
         float AR = resolution.x / resolution.y;
-
         pos = gl_FragCoord.xy - resolution.xy * 0.25;
         pos /= resolution.y;
         pos *= 1.5;
-
 
         float mask1 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.), 0.4, 0.5), 0.05));
         float mask2 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.), 0.3, -0.3), 0.05));
         float mask3 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.1), 0.15, -0.43), 0.05));
         float mask4 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.), 0.1, 0.62), 0.05));
-
-        <!--        float mask5 = smoothstep(0.0, 0.3, sdCircle(pos - mouse.xy / vec2(resolution.x / AR, resolution.y) + vec2(0.5 * AR, 0.5), 0.05));-->
 
         float mask5 = smoothstep(0.0, 0.3, sdCircle(pos - vec2(mouse.x, -mouse.y) - vec2(-0.5, 0.5), 0.1));
 
@@ -76,8 +62,6 @@
         vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0,2,4));
 
         gl_FragColor = vec4(col, 1.) * finalMask;
-        <!--        gl_FragColor = vec4(vec3(mouseCircle), 1.); -->
-        <!--        gl_FragColor = vec4(1., 0., 0., 1.);-->
         }
     </p>
 
@@ -90,28 +74,70 @@
         the parallel processing GPU principles I acquired from these studies, I was able to implement shaders into my
         game development pipeline.
     </p>
-    <p>
-        In order to showcase my GLSL programming, I have decided to make all of the backgrounds in my portfolio be
-        entirely composed of shaders I wrote for WEBGL. I am not entirely sure how far I will have gotten at the point
-        of your viewing, but hopefully enough pages will be filled with eye-candy to satisfy your every need!
-    </p>
     <br>
     <p>
-        For our collective amusement, I'll display below the code for whatever shader is in the background of this page:
+        Below are a couple of playful shaders I have written for the web:
+    </p>
+    <br>
+    <p>The shader being used as a background for this page!</p>
+    <div class="video-container-2">
+        <video src="Vids/WebMetaball.mp4" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
+    </div>
+    <br>
+    <br>
+    <p>Simplex noise patterns</p>
+    <div class="video-container-2">
+        <video src="Vids/WebSimplex.mp4" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
+    </div>
+    <br>
+    <br>
+    
+    <p>Feel free to browse around the rest of this website to find in the background some other shaders I have written :)</p>
+    
+    <br>
+    <p>
+        For fun, I'll display below the code for whatever shader is in the background of this page:
     </p>
     
-    <p>
+    <p style="font-family: 'Courier New'">
         vec2 pos; <br>
-        uniform float time;<br>
-        uniform vec2 resolution;<br>
+        uniform float time; <br>
+        uniform vec2 resolution; <br>
+        uniform vec2 mouse; <br>
         <br>
-        void main(void)<br>
-        {<br>
+        float sdCircle( vec2 p, float r ) <br>
+        { <br>
+        return length(p) - r; <br>
+        } <br>
         <br>
-        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);<br>
-        vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0.,2.,4.));<br>
-        gl_FragColor = vec4(col,1.0);<br>
+        vec2 path(float time, vec2 pos, float radius, float vel) <br>
+        { <br>
+        return vec2(sin(time * vel), cos(time * vel)) * radius - pos; <br>
+        } <br>
         <br>
+        void main(void) <br>
+        { <br>
+        <br>
+        vec2 pos = gl_FragCoord.xy / resolution.xy; <br>
+        float AR = resolution.x / resolution.y; <br>
+        pos = gl_FragCoord.xy - resolution.xy * 0.25; <br>
+        pos /= resolution.y; <br>
+        pos *= 1.5; <br>
+        <br>
+        float mask1 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.), 0.4, 0.5), 0.05)); <br>
+        float mask2 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.), 0.3, -0.3), 0.05)); <br>
+        float mask3 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.1), 0.15, -0.43), 0.05)); <br>
+        float mask4 = smoothstep(0.0, 0.3, sdCircle(pos - path(time, vec2(0.), 0.1, 0.62), 0.05)); <br>
+        <br>
+        float mask5 = smoothstep(0.0, 0.3, sdCircle(pos - vec2(mouse.x, -mouse.y) - vec2(-0.5, 0.5), 0.1)); <br>
+        <br>
+        float maskTotal = (mask1 + mask2 + mask3 + mask4 + mask5*2.) / 6.; <br>
+        <br>
+        float finalMask = 1. - smoothstep(0.7, 0.71, maskTotal); <br>
+        <br>
+        vec3 col = 0.5 + 0.5*cos(time+pos.xyx+vec3(0,2,4)); <br>
+        <br>
+        gl_FragColor = vec4(col, 1.) * finalMask; <br>
         }
     </p>
 </main>

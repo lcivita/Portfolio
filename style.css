@@ -76,6 +76,13 @@ body {
     border-bottom: 2px solid white;
 }
 
+.video-container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh; !* This sets the container's height to the full height of the viewport. Adjust as necessary. *!*/
+}
+
 .autoplay-video {
     position: absolute;
     right: 0;
