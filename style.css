@@ -321,7 +321,6 @@ a h3:hover {
 }
 
 
-/* Media queries for responsiveness */
 @media (max-width: 1200px) {
     .project {
         width: calc(33.33% - 20px);
@@ -343,34 +342,6 @@ a h3:hover {
         margin-left: 0px;
     }
     
-}
-
-.black-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 240px;
-    height: 100%;
-    background-color: black;
-    z-index: -1;
-}
-.black-background-2 {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 160px;
-    height: 100%;
-    background-color: black;
-    z-index: -1;
-}
-
-@media (max-width: 800px) {
-    .black-background {
-        width: 0;
-    }
-    .black-background-2 {
-        width: 0;
-    }
 }
 
 .gif-row {
@@ -490,5 +461,4 @@ h1 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: white;
-    
 }
