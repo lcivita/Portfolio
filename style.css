@@ -185,13 +185,20 @@ canvas {
 
 section {
     scroll-margin-top: 70px;
-    
+}
+
+section a:hover {
+    border: 2px solid deeppink;
 }
 
 .section-head {
     text-align: center;
     border: 2px solid white;
 }
+
+/*.section-head:hover {*/
+/*    border: 2px solid deeppink;*/
+/*}*/
 
 main h2 {
     background: black;
@@ -211,11 +218,13 @@ main p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax for your project size */
     gap: 20px; /* Adjust for the gap between projects */
+    
 }
 
 .project {
     /* Your project styling; no need for margin-right adjustments */
     margin-bottom: 20px; /* Adjust if necessary */
+    
 }
 
 h3 {
@@ -229,6 +238,11 @@ h3 {
 
 a h3:hover {
     color: deeppink;
+    border: 2px solid deeppink;
+}
+
+.project a {
+    background: transparent none;
 }
 
 .project h3 {
@@ -240,9 +254,10 @@ a h3:hover {
     
 }
 
-.project a:hover {
-    background: deeppink;
-}
+/*.project a:hover {*/
+/*    !*background: deeppink;*!*/
+/*    border: solid deeppink 2px;*/
+/*}*/
 
 
 .project img {
@@ -257,6 +272,12 @@ a h3:hover {
     border: 2px solid white;
     
 }
+
+.project video:hover {
+    border: 2px solid deeppink;
+}
+
+
 
 .gif-row {
     display: flex;
@@ -296,6 +317,10 @@ a h3:hover {
 .project-image {
     max-width: 100%;
     height: auto;
+}
+
+.project img:hover {
+    border: 2px solid deeppink;
 }
 
 a {
