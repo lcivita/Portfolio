@@ -313,6 +313,13 @@ a h3:hover {
     border: 2px solid white;
 }
 
+.project video {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid white;
+    
+}
+
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
