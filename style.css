@@ -1,81 +1,3 @@
-/*nav {*/
-/*    width: 200px;*/
-/*    background-color: blueviolet;*/
-/*    color: white;*/
-/*    padding: 0;*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    bottom: 0;*/
-/*    font-family: "Roboto", monospace;*/
-/*    font-size: 10px;*/
-/*}*/
-
-/*.nav-menu {*/
-/*    width: 220px;*/
-/*    background-color: transparent; */
-/*    color: white;*/
-/*    padding: 10px;*/
-/*    position: fixed; */
-/*    top: 0; */
-/*    bottom: 0;*/
-/*    font-family: "Roboto", monospace;*/
-/*    overflow-y: auto;*/
-/*    font-size: 14px;*/
-/*}*/
-
-/*.menu-header {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.menu-header img {*/
-/*    max-width: 100%;*/
-/*    height: auto;*/
-/*    margin-right: 10px;*/
-/*    padding-bottom: 20px;*/
-/*}*/
-
-/*.menu-description {*/
-/*    background-color: transparent;*/
-/*    */
-/*    padding: 5px 20px;*/
-/*}*/
-
-/*@media (max-width: 800px) {*/
-/*    */
-/*    .menu-description {*/
-/*        display: none;*/
-/*        background: transparent;*/
-/*    }*/
-
-/*    */
-/*    .menu-toggle {*/
-/*        position: absolute;*/
-/*        top: 10px;*/
-/*        left: 10px;*/
-/*        background: transparent;*/
-/*    }*/
-
-/*    !* Make the site icon smaller *!*/
-/*    .menu-toggle img {*/
-/*        max-width: 40px;*/
-/*        height: auto;*/
-/*        background: transparent;*/
-/*        margin-left: -10px;*/
-/*    }*/
-/*    */
-/*    .nav-menu {*/
-/*        width: 5%;*/
-/*        background: transparent;*/
-/*    }*/
-/*    .black-background {*/
-/*        background: transparent;*/
-/*    }*/
-/*    .black-background-2 {*/
-/*        background: transparent;*/
-/*    }*/
-/*}*/
-
 html {
     scroll-behavior: smooth;
 }
@@ -88,13 +10,19 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100vw - 16px);
+    width: 100vw;
     height: 60px;
     padding: 0 15px;
     background-color: #000;
     border-bottom: 2px solid #fff;
     z-index: 1000;
     box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .site-header {
+        width: calc(100vw - 16px); /* Adjust width for larger screens */
+    }
 }
 
 .info-button {
@@ -218,8 +146,8 @@ ul li a:hover {
 }
 
 main {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 0;
+    margin-right: 0;
     padding: 50px;
     background-color: transparent;
     margin-top: 0;
@@ -243,6 +171,15 @@ canvas {
 @media (max-width: 800px) {
     main {
         margin-right: 3px;
+    }
+    .overlay-text:nth-of-type(n+2) {
+        display: none;
+    }
+}
+
+@media (max-height: 600px) {
+    .overlay-text:nth-of-type(n+2) {
+        display: none;
     }
 }
 
@@ -366,6 +303,7 @@ a {
     color: white;
     position: relative;
     background: black;
+    display: block;
 }
 
 

@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- p5 party -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5.party@latest/dist/p5.party.js"></script>
+
+    <!-- p5 Sound -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js"></script>
+
+    <!-- JavaScript files to be used -->
+    <script src="coolKidChatFiles/main.js"></script>
+    <script src="coolKidChatFiles/input.js"></script>
+    <script src="coolKidChatFiles/roleKeeper.js"></script>
+    
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luca Jeha Civita - Cool Kid Chat</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ckcCSS.css">
     <script src="webgl.js" type="module"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
@@ -17,7 +34,7 @@
     <button class="info-button">info</button>
 </header>
 
-<main>
+<main class="main-container">
     <br>
     <br>
     <!-- bg frag shader-->
@@ -33,27 +50,30 @@
         }
     </p>
 
-    <a href="index.html" style="padding: 10px;border: 2px solid white;"><- back</a>
-    <h1>Sample</h1>
-
-
-    <!-- Row of GIFs -->
-    <div class="gif-row">
-        <!-- GIF 1 -->
-        <div class="gif">
-            <img src="Gifs/GGGgif1.gif" alt="GIF 1">
-        </div>
-
-        <!-- GIF 2 -->
-        <div class="gif">
-            <img src="Gifs/GGGgif2.gif" alt="GIF 2">
-        </div>
-
-        <!-- GIF 3 -->
-        <div class="gif">
-            <img src="Gifs/GGGgif3.gif" alt="GIF 3">
-        </div>
+    <button id="toggleInfoBtn" class="toggle-info-btn">&#x25BA;</button>
+    <div class="project-info" id="projectInfo">
+        <h2>Cool Kid Chat 2.0</h2>
+        <p style="font-family: 'Poppins', sans-serif;">a testament to the true essence of cool and the ultimate destination for the elite conversationalist 😎</p>
+        <p style="font-family: 'Poppins', sans-serif;">Transcending the banality of messaging applications, our messaging grounds have become a playing field for the quick-witted and the quick-fingered. Do you have what it takes? Join us and let your words be the judge!</p>
+        <br>
+        <p style="font-family: 'Poppins', sans-serif;">Cool Kid Chat 2.0 is web-based chat application that experiments with lobby sizes to satirically reflect the social dynamics of youth culture. With a simple click, users can enter the chat party; however, the privilege to message is granted only to those lucky enough to be identified as 'cool.' Limited to a party size of four, those not selected face a challenging reality. They receive a message stating "ur not invited" while still being able to watch the interactions of the cool kids from the sidelines. As an observer, you're presented with a choice: leave the chat with your dignity intact or quietly wait for an opportunity to join the coveted cool kid group.</p>
     </div>
 </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var infoBtn = document.getElementById('toggleInfoBtn');
+        var projectInfo = document.getElementById('projectInfo');
+
+        infoBtn.addEventListener('click', function() {
+            projectInfo.classList.toggle('visible');
+            if (projectInfo.classList.contains('visible')) {
+                infoBtn.innerHTML = '&#x25BC;';
+            } else {
+                infoBtn.innerHTML = '&#x25BA;';
+            }
+        });
+    });
+</script>
 </body>
 </html>
