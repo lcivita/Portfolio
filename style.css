@@ -21,18 +21,18 @@ html {
 
 @media (min-width: 768px) {
     .site-header {
-        width: calc(100vw - 16px); /* Adjust width for larger screens */
+        width: calc(100vw - 16px);
     }
 }
 
 .info-button {
     cursor: pointer;
-    padding: 5px 10px; /* Keep padding but remove extra right padding */
+    padding: 5px 10px;
     font-size: 14px;
     background-color: black;
     color: white;
     border: 2px solid white;
-    box-sizing: border-box; /* This makes sure the border is included in the button's total width */
+    box-sizing: border-box;
 }
 
 .info-button:hover {
@@ -70,7 +70,6 @@ body {
     top: 60px;
     width: 100vw;
     height: calc(100vh - 60px);
-    /*max-height: 100%;*/
     background-color: black;
     z-index: -1;
     border-bottom: 2px solid white;
@@ -80,13 +79,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*height: 100vh; !* This sets the container's height to the full height of the viewport. Adjust as necessary. *!*/
 }
 
 .autoplay-video {
     position: absolute;
     right: 0;
-    top: 15vh; /* Offset the top position by the same amount to align with the new container height */
+    top: 15vh;
     width: 60vw;
     height: auto;
     max-height: calc(100vh - 70px - 14vh) ;
@@ -97,7 +95,6 @@ body {
     top: 0;
     right: 65%;
     left: 10vw;
-    /*height: 90vh;*/
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -116,17 +113,16 @@ body {
     color: white;
     margin-top: 0;
     border: none;
-    /*height: 90vh;*/
 }
 
 .scroll-indicator {
-    position: absolute; /* Or 'absolute' if it's within a positioned container */
-    bottom: 5vh; /* Distance from the bottom of the viewport */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Align the center of the element with the center of the viewport */
-    font-size: 2vh; /* Arrow size, adjust as needed */
-    color: white; /* Arrow color, change as per your design */
-    z-index: 10; /* Ensure it's above other content */
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2vh;
+    color: white;
+    z-index: 10;
 }
 
 
@@ -203,10 +199,6 @@ section a:hover {
     border: 2px solid white;
 }
 
-/*.section-head:hover {*/
-/*    border: 2px solid deeppink;*/
-/*}*/
-
 main h2 {
     background: black;
     color: white;
@@ -224,15 +216,12 @@ main p {
 
 .project-grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax for your project size */
-    gap: 20px; /* Adjust for the gap between projects */
-    
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .project {
-    /* Your project styling; no need for margin-right adjustments */
-    margin-bottom: 20px; /* Adjust if necessary */
-    
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -261,11 +250,6 @@ a h3:hover {
     border: 2px solid white;
     
 }
-
-/*.project a:hover {*/
-/*    !*background: deeppink;*!*/
-/*    border: solid deeppink 2px;*/
-/*}*/
 
 
 .project img {
@@ -398,7 +382,6 @@ h1 {
 
 .coming-soon:hover {
     color: deeppink;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
 }
 
 ::-webkit-scrollbar {

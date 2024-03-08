@@ -39,24 +39,23 @@
   <a href="index.html" style="padding: 10px;border: 2px solid white;"><- back</a>
   <h1>Raymarching Character Control</h1>
 
-
-  <!-- Row of GIFs -->
-  <div class="gif-row">
-    <!-- GIF 1 -->
-    <div class="gif">
-      <img src="Gifs/GGGgif1.gif" alt="GIF 1">
-    </div>
-
-    <!-- GIF 2 -->
-    <div class="gif">
-      <img src="Gifs/GGGgif2.gif" alt="GIF 2">
-    </div>
-
-    <!-- GIF 3 -->
-    <div class="gif">
-      <img src="Gifs/GGGgif3.gif" alt="GIF 3">
-    </div>
+  <p>Here I venture into the intricate processes of raymarching, with a specific focus on integrating 3D Signed Distance Fields (SDFs) with skeletal animations. This approach has allowed me to experiment with creating characters that are both sculpted in a unique manner and animated procedurally.</p>
+  <div class="video-container-2">
+    <video src="Vids/Raymarch.mp4" alt="raymarch" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
   </div>
+  <p>The core idea of this project was to create a character controller that allowed for blending between separate physical forms seamlessly. By utilizing smooth minimum equations to blend the SDFs, I was able to create a meta-shape effect that lended itself to my initial goals.</p>
+
+  <div class="video-container-2">
+    <video src="Vids/menu.mp4" alt="menuRaymarch" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
+  </div>
+  <p>Above is a demonstration of the character controller in action, where the raymarching technique is used to render a character select screen in my most recent work in progress <a href="animuh.html" style="display: inline">[Jungle Jym]</a></p>
+
+  <img src="imgs/raymarchShapes.png" alt="shapes" class="center-image" style="border: solid white 2px">
+  <p>
+    For demonstration, here is a render created with this method. As can be seen above, the system I developed (although 
+    still under development) can be used to render more complicated SDFs and potential character shapes in the future.
+  </p>
+  <br>
 </main>
 </body>
 </html>
