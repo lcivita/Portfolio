@@ -14,6 +14,7 @@
     <a href="index.html">
         <img src="Icons/topLeftIcon.png" alt="Logo" class="header-logo">
     </a>
+    
     <a href="index.html#about-contact" class="info-button" style="font-family: 'Courier New'">info</a>
 </header>
 
@@ -38,6 +39,21 @@
 
     <a href="index.html" style="padding: 10px;border: 2px solid white;"><- back</a>
     <h1>3D pixel blur render</h1>
+
+    <div class="video-container-2">
+        <video src="Vids/3Dblur.mp4" alt="blur" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
+    </div>
+    
+    <p>
+        In my journey through 3D rendering and shader programming, I often aspired to craft unique post-processing effects. My curiosity was piqued by the common challenge in the field of bridging the gap between 3D environments and screen-space shaders. I aimed for a design where pixels were aware of their 3D context without leaning on resource-intensive techniques like ray-casting. My approach materialized as a two-pass rendering system, transferring three-dimensional data through the RGBA channels of meshes. Here's a brief overview of the two phases in the rendering workflow:
+    </p>
+
+    <div class="video-container-2">
+        <video src="Vids/3DblurProcess.mp4" alt="blurPre2ndPass" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
+    </div>
+    <p>
+        The video snippet above showcases the shader I devised for 3D meshes. The upper half of the screen recording might appear unimpressive at first, yet these visuals are filled with essential data for my subsequent post-processing work. The camera captures the raw RGBA 3D scene onto a texture, which is then refined using a fragment shader. This shader taps into the RGBA channels to apply 2D masks and distortions grounded in the 3D attributes of the objects. Thus, for lack of a better title, the '3D-Pixel-Noise-Blur' shader emerged!
+    </p>
     
 </main>
 </body>
