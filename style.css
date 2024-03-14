@@ -329,6 +329,16 @@ a:hover {
     cursor: url('Cursors/linkCursor.png'), pointer;
 }
 
+.button-link {
+    text-align: center;
+    border: solid white 2px;
+    padding: 20px;
+}
+
+.button-link:hover {
+    border: solid deeppink 2px;
+}
+
 
 .image-container {
     position: relative;
@@ -401,3 +411,46 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
     background: white;
 }
+
+.feature-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.text-content, .video-content {
+    flex: 1;
+    padding: 10px;
+}
+
+.video-content {
+    max-width: 50%;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .feature-section {
+        flex-direction: column;
+    }
+
+    .video-content, .text-content {
+        max-width: 100%;
+    }
+
+    .video-content {
+        order: -1;
+        text-align: center;
+    }
+
+    .video-content video {
+        width: 100%; /* Makes the video responsive and centered */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 400px; /* Optional: Limit the video size */
+        margin: 0 auto; /* Centers the video element within its container */
+    }
+}
+
+
+

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Jeha Civita - Skybox Editor Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="webgl.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        #readme {
+            background-color: #161b22;
+            color: #c9d1d9;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 6px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            border: 1px solid #30363d;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+        }
+
+        #readme-header {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            border-radius: 6px;
+            width: 80%;
+            max-width: 800px;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+            text-align: center;
+            padding: 20px;
+            margin: 20px auto;
+        }
+
+        #readme-header a {
+            color: #58a6ff; /* GitHub link color */
+            text-decoration: none;
+            border: none;
+            background: none;
+        }
+        
+        #readme-header p {
+            background: none;
+            border:none;
+        }
+
+        #readme-header a:hover {
+            text-decoration: underline; /* Underline on hover for links, as is common on GitHub */
+            border: none;
+        }
+
+        #readme-container {
+            width: 80%;
+            margin: 20px auto;
+            border-radius: 6px;
+            background: none;
+        }
+
+        #readme h1, #readme h2, #readme h3, #readme h4, #readme h5, #readme h6, #readme p, #readme ul, #readme li, #readme a {
+            border: none;
+            padding-left: 0;
+            line-height: 1.5; 
+            background: none;
+        }
+
+        #readme a {
+            color: #58a6ff; /* GitHub link color */
+            text-decoration: none; /* No underline for links unless hovered */
+        }
+
+        #readme a:hover {
+            text-decoration: underline; /* Underline on hover for links */
+        }
+
+        #readme code {
+            background-color: #161b22; /* Background color for code elements */
+            color: #c9d1d9; /* Text color for code elements */
+            padding: .2em .4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 6px;
+        }
+    </style>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<script>
+    async function loadReadme() {
+        const readmePath = 'https://rawcdn.githack.com/lcivita99/SkyboxEditor_Unity/e2066b7ff63ddc0150b98b1a5d18c8f428dd9057/README.md';
+        try {
+            const response = await fetch(readmePath);
+            const markdown = await response.text();
+            document.getElementById('readme').innerHTML = marked.parse(markdown);
+        } catch (error) {
+            console.error('Failed to load README', error);
+        }
+    }
+
+    loadReadme();
+</script>
+
+<header class="site-header">
+    <a href="index.html">
+        <img src="Icons/topLeftIcon.png" alt="Logo" class="header-logo">
+    </a>
+    <a href="index.html#about-contact" class="info-button" style="font-family: 'Courier New'">info</a>
+</header>
+
+<!-- Main Content (Home Page) -->
+<main>
+
+
+    <br>
+    <br>
+    <!-- bg frag shader-->
+    <p id="fragmentShader" hidden>
+        vec2 pos;
+        uniform float time;
+        uniform vec2 resolution;
+
+        void main(void) {
+        vec2 pos = 2.0*gl_FragCoord.xy / resolution.y - vec2(resolution.x/resolution.y, 1.0);
+        float d = sqrt(pos.x*pos.x + pos.y*pos.y)*10.0;
+        gl_FragColor = vec4(1.0+cos(time*0.97+d), 1.0+cos(time*0.59+d), 1.0+cos(-0.83*time+d), 2.0)/2.0;
+        }
+    </p>
+
+    <a href="index.html" style="padding: 10px;border: 2px solid white;"><- back</a>
+    <h1>Skybox Editor</h1>
+    
+    <div class="center-image" style="border: none">
+        <div class="video-container-2">
+            <video src="Vids/SkyboxMain.mp4" alt="skybox editor main" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" draggable="false" playsinline autoplay muted loop></video>
+        </div>
+    </div>
+
+    <h3>conceptualization</h3>
+    <p>
+        The journey of creating the Skybox Editor was one born out of a necessity to simplify the typically
+        cumbersome process of iterating skyboxes, streamlining what was once an arduous pipeline. This endeavor
+        led me to develop a tool that facilitates quick adjustments and previews, addressing the gap I
+        found while relying on random assets from the Unity Asset Store over the years.
+    </p>
+    
+    <br>
+
+    <br>
+    <h3>Features</h3>
+    <br>
+    
+    <div class="feature-section">
+        <div class="text-content">
+            
+            <p>Preview Window</p>
+            <p>
+                The development process involved designing an editor window that generates a simplified representation
+                of the final skybox. This feature was implemented to aid developers in visualizing their work without
+                the need to adjust their viewport to have the sky in frame, ensuring a more intuitive design experience.
+            </p>
+        </div>
+        <div class="video-content">
+            <video src="Vids/SkyboxPreview.mp4" alt="skybox preview" style="display: inline; width: 30vw; min-width: 200px; border: solid white 2px;" draggable="false" playsinline autoplay muted loop></video>
+        </div>
+    </div>
+
+    <div class="feature-section">
+        <div class="text-content">
+            <p>Filtering Modes</p>
+            <p>
+                Through the Skybox Editor, developers have the flexibility to choose between Point, Bilinear, or Trilinear
+                filtering. This selection aims to empower creators to fine-tune their environments, enhancing the
+                visual appeal of their projects with tailored skybox textures.
+            </p>
+        </div>
+        <div class="video-content">
+            
+            <video src="Vids/SkyboxFilter.mp4" alt="skybox editor main" style="display: inline; width: 30vw; min-width: 200px; border: solid white 2px;" draggable="false" playsinline autoplay muted loop></video>
+        </div>
+    </div>
+
+    <div class="feature-section">
+        <div class="text-content">
+            <p>Resolution Flexibility</p>
+            <p>
+                This aspect of the tool allows for various resolution settings, accommodating different levels of detail and
+                performance needs. It enhances the adaptability of skybox visuals across diverse project requirements.
+            </p>
+        </div>
+        <div class="video-content">
+            <video src="Vids/SkyboxResolution.mp4" alt="skybox editor main" style="display: inline; width: 30vw; min-width: 200px; border: solid white 2px;" draggable="false" playsinline autoplay muted loop></video>
+        </div>
+    </div>
+
+    <div class="feature-section">
+        <div class="text-content">
+            <p>Load/Save Support</p>
+            <p>
+                Offering comprehensive load and save functionality, the Skybox Editor manages the creation and navigation of
+                skybox assets, allowing users to stay organized and easily access their past creations.
+            </p>
+        </div>
+        <div class="video-content">
+            <video src="Vids/SkyboxSaveLoad.mp4" alt="skybox editor main" style="display: inline; width: 30vw; min-width: 200px; border: solid white 2px;" draggable="false" playsinline autoplay muted loop></video>
+        </div>
+    </div>
+
+    <!--    Skybox Editor is an open-source tool created to facilitate the customization of skyboxes in Unity.-->
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2 style="text-align: center">Github</h2>
+    <div id="readme-container">
+        <div id="readme-header">
+            <p>Here is the <a href="https://github.com/lcivita99/SkyboxEditor_Unity" target="_blank" style="display: inline">project repo</a> and below is the current, live <a href="https://github.com/lcivita99/SkyboxEditor_Unity/blob/main/README.md" target="_blank" style="display: inline">README</a> where you can find download links & instructions</p>
+        </div>
+        <div id="readme"></div>
+    </div>
+
+</main>
+</body>
+</html>
