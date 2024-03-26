@@ -18,6 +18,11 @@ html {
     z-index: 1000;
     box-sizing: border-box;
 }
+body, .container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 @media (min-width: 768px) {
     .site-header {
@@ -58,6 +63,10 @@ body {
     overflow-y: scroll;
 }
 
+video {
+    max-width: 500px;
+}
+
 .empty-intro-container {
     position: relative;
     width: 100%;
@@ -87,7 +96,8 @@ body {
     top: 15vh;
     width: 60vw;
     height: auto;
-    max-height: calc(100vh - 70px - 14vh) ;
+    max-height: calc(100vh - 70px - 15vh) ;
+    
 }
 
 .overlay-content {
