@@ -36,41 +36,51 @@
 
     <a href="index.html" style="padding: 10px;border: 2px solid white;"><- back</a>
 
-    <h1>Jungle Jym - Coming Soon!</h1>
+    <h1>Jungle Jym</h1>
     <p>
-        <a href="https://jwhop.github.io" style="display: inline">[Jonny Hopkins]</a> and I have joined forces to create Jungle Jym!
-    </p>
-    <p>
-        Jungle Jym is a collection of animal sports created to study slapstick humor and sports design in games using a ground–up approach to the game development pipeline, including our own custom physics, animation, and procedural visuals.
-    </p>
-    <p>
-        In our few months of development, we have worked by completely overhauling the default Unity game development
-        pipeline and created our own rendering, animation, and physics systems to have a completely customizable environment.
+        <a href="https://jwhop.github.io" style="display: inline">[Jonny Hopkins]</a> and I have joined forces to create
+        Jungle Jym, a multiplayer party-game where players take on the roles of animals playing sports!
     </p>
     <br>
-    <p>
-        This project is expected to be released mid 2024. Below are a some screen recordings from the recent stages
-        of development, alongside short descriptions :)
-    </p>
+
+    <div style="padding:56.25% 0 0 0;position:relative; border: solid white 2px"><iframe src="https://player.vimeo.com/video/944679065?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Jungle Jym // Preview"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
     <br>
     <br>
-    <img src="Gifs/vertexSmear.gif" alt="vertex smear" class="center-image">
-    <p style="text-align: center; ">In order to create a cartoon-y feel to 3D objects and their animations in game, I made a
-        shader that displaced vertices and normals according to the delta movement of 3D models.
-        This was created in Unity via the Universal Render Pipeline shadergraph.</p>
-    <br>
-    <br>
-    <div class="video-container-2">
-        <video src="Vids/aniMUH.mp4" alt="phroccer" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
+    <div class="interactive-section">
+        <div class="options">
+            <button onclick="showContent(0)"><strong>RAGBALL</strong></button>
+            <button onclick="showContent(1)"><strong>BEET DOWN</strong></button>
+            <button onclick="showContent(2)"><strong>ROG FRACE</strong></button>
+            <button onclick="showContent(3)"><strong>TURTLE TAG</strong></button>
+        </div>
+        <div class="content">
+            <div class="content-item" id="content-0">
+                <img src="imgs/bear.png" alt="Image 1">
+                <p><strong>RAGBALL</strong> is a team-based active ragdoll soccer game for 2-4 players. Stumble around the field and kick, header, or dash your way into scoring a goal on your opponent!</p>
+            </div>
+            <div class="content-item" id="content-1">
+                <img src="imgs/beetle.png" alt="Image 2">
+                <p><strong>BEET DOWN</strong> is a beetle wrestling free-for all game for 2-4 players. Lumber around as a b-tl and try to flip over your opponent! Don’t fall out of the tree! Each beetle additionally controls its own drum track, making each game a uniquely soundtracked wrestling match.</p>
+            </div>
+            <div class="content-item" id="content-2">
+                <img src="imgs/frog.png" alt="Image 3">
+                <p><strong>ROG FRACE</strong> is a frog racing game for 2-3 players! Maneuver through a playground obstacle course through hopping and grappling with your tongue! Beware, you can also latch on to other players!</p>
+            </div>
+            <div class="content-item" id="content-3">
+                <img src="imgs/turtle.png" alt="Image 4">
+                <p><strong>TURTLE TAG</strong> is a team-based path tracing game for 2-4 players! Each player controls their own turtle on a scooter. With only the ability to use their left or right flipper for forward propulsion, players must trace a path around the ball to score points or stun opponents!</p>
+            </div>
+        </div>
     </div>
-    <p style="text-align: center;">Phroccer - Frog soccer!</p>
-  
+    <script src="interactiveChart.js"></script>
     <br>
-    <br>
-    <div class="video-container-2">
-        <video src="Vids/ragball2.mp4" alt="ragbear" style="display: inline; width: 40vw; min-width: 250px; border: solid white 2px;" alt="webMetaball" playsinline autoplay muted loop></video>
-    </div>
-    <p style="text-align: center;">Ragball 2.0 - Bear Ragball!</p>
+
+    <p>
+        This project was on display at the <strong></stronh> <a href="https://parsons.edu/dt-2024/" style="display: inline">[Parsons Spiraling Ashore Pop Up Show]</a></strong>
+        and its alpha itch page can be found below:
+    </p>
+    
+    <iframe frameborder="0" src="https://itch.io/embed/2698688?border_width=2&amp;bg_color=000000&amp;fg_color=ffffff&amp;link_color=ffffff&amp;border_color=ffffff" width="554" height="169"><a href="https://jwhop.itch.io/jungle-jym">Jungle Jym by jwhop</a></iframe>
 <!--    <br>-->
 <!--    <br>-->
 <!--    <div class="video-container-2">-->
